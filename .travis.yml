@@ -1,6 +1,13 @@
 language: node_js
-node_js: 
-  - "stable"
+node_js:
+- stable
 cache:
   directories:
-    - "node_modules"
+  - node_modules
+deploy:
+  provider: heroku
+  api_key:
+    secure: k8gLmmmnnGe9x1NiotL2Vj6iFHC0jJUo+vzVANDnYu9Pzh9Ez6R0HbLf4xhtSBMhR73Kyjzo7wgJKZvDgL1pvVI6DgwXUNpJlRU4gofCKtgMkNvh2tTTHZQuWEDrqE+iRgHgpzLOYpjLtsK1OqECygXFe16bGgIIAOaCsuu8/kHa9Z0JYueHjyyBKFgpmt+XhIHojer5opC7i9H8WHvoUZZzD1TzI/hV0/Ywmhdv3BtpdtQTRy7h1PzuKjDJsU50C8LwQ7j91bi69SimZD6lwkXPKvacExvj2hNGtxdUeY3JAIMds8b0p/IL39xOcoA5axaiePKG1WPmdSJ/DIgSNExkfnJyggGAzA1nRItntlzRdwanwVINcgT0oLsVfj5qLdxS1/+1DflYhfwj95QvJPZk7I+cISNJyuyJGhL2Tp+SB2jP/5SM1kVbswp0ADpbNhedSPDPeP9tMX8FAo/T8Lm2xief7Ps1SBaag8nEXpOM8aUHjoriR57Y8E5m0uBQPvQii4iRmI7kwOfsrA45aLZYHZmpSPF3RX3yUpFuz81tGoiTpcmBPICNsUSjDtj0ykDgJlqFjKZnRnrvo4mBtW38e68fCjbY+Ru1ytvI2e9y5Wvcxdq35qZv2qtRRzNGP72IITzF/CyvptIH2dhl9Gmvj1tPt9dg6aHogjvvLhc=
+  app: travis-ci-lb
+  on:
+    repo: bourguy/travis
