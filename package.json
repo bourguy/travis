@@ -1,5 +1,5 @@
 {
-  "name": "travis",
+  "name": "travis-ci",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,18 +7,11 @@
     "start": "node index.js",
     "test": "mocha"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bourguy/travis.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bourguy/travis/issues"
-  },
-  "homepage": "https://github.com/bourguy/travis#readme",
   "dependencies": {
     "chai": "^4.2.0",
+    "ejs": "^2.6.1",
     "express": "^4.16.3",
     "mocha": "^5.2.0"
   }
