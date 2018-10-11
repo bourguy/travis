@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 5000
 //process.env.NODE_ENV="production";
 
 //console.log('NODE_ENV: ', process.env.NODE_ENV);
-console.log(process.env.NODE_ENV);
+console.log(NODE_ENV);
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
