@@ -1,27 +1,8 @@
-/*const express = require('express');
-
-const app = express();
-
-app.get('/', (req, res) => {
-  res.send('ci with travis');
-});
-
-const server = app.listen(3000, () => {
-  console.log('App running on port 3000');
-});
-
-module.exports = server;
-*/
-
-
-// a integrer
 const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
-//process.env.NODE_ENV="production";
 
 //console.log('NODE_ENV: ', process.env.NODE_ENV);
-//console.log('${NODE_ENV}');
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
@@ -29,4 +10,3 @@ express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
- // .close()
