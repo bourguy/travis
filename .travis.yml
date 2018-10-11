@@ -3,7 +3,7 @@ node_js:
 - stable
 cache:
   directories:
-  - node_modules
+  - "$home/.npm"
 deploy:
   provider: heroku
   api_key:
