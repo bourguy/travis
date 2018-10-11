@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "mocha --exit"
-    "if [[ ${NODE_ENV} == \"dev\" ]]; then mocha; else mocha --exit"
+    "test": "if [[ ${NODE_ENV} == \"dev\" ]]; then mocha; else mocha --exit; fi"
   },
   "author": "",
   "license": "ISC",
