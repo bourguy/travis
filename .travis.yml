@@ -6,6 +6,7 @@ install:
 cache:
   directories:
   - "$home/.npm"
+  - "node_modules"
 deploy:
   provider: heroku
   api_key:
