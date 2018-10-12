@@ -6,25 +6,20 @@ install:
 cache:
   directories:
   - "$home/.npm"
-  - "node_modules"
+  - node_modules
   override:
   - npm ci
   - npm run cy:verify
 deploy:
   provider: heroku
   api_key:
-    secure: ZR0PjOkx46fxAPIrkBj/4rknXjFtvIjNlTYMOcTccZDOBM9sYQ3EQzADKTXB99c62q5k36IzSuHUc0KiCy3d0z9VJ5bTl2kQrOmyFSsDrjZAYrFTtE1ZWGWkaD9Wbsw4Z7KxPMA4K0BOwC8QjKeF48YT7FunvG9vxZfu8nommd4zCLQlqSpAGGYL/q9ctivmaqSI0d8EnT/yBPML208yQrLVqgrwCArPI0fSC4mVRCrZyvQpCF4YpmsVBtCMsHPuIrIrijgBimggyYGFZhlv3KGClK4u2QxcKsmLM3UetubweQRq3DeXl8NIV+ZfHg+c9NvLvezSQEvdOSXr/2f0SJ/9IihdiFB60UCXFvbygkT4cXbntDlWHWyGlfpYadIUQUEGG8KV8VH5zmD5vucrpi4mRu/wN23JqsmbIVsnMoAK1Mp169V4VX9kdWunDeYp0hT4QlzuALgAjj6EI5DMb+waTwUqe+qpkfRpRVRwUAYWkxz00if1oUrYpSfCgAnbL9be2PSxu8fAlnRkKr31hUpIUrl9saS4MHASKOLvdE22CZKtIr7v5lAKlvlA9tm/uLyJtajcv92OcZyb1xyf9a8YVu2wD+XSg0zQPm9Kpg266hjAjE6utoRVb1NvYUWj+oJZRVru8QXHYa6UYSsZroc4W7R59bLNxT7uKY6iHbU=
-  app: 
+    secure: GC6NM/83kevM5dsEhyxW+xW18Q724vZIYKN4xgfOSMa1ud4GtIZkZpjxfzxftbIpBmmyQqtgvEeqEtKAQzvN2ZnG4zfUOtQ8ZGgEcVTCGbS7hwE0tgcP6VQNlewSIxo+H8TPoNnoo7XjnzwX6+Sp+CWkXtOtI7I7RwHhBXAfitYijMQHHyJ1rU4jO/6va6+ClbLdvtzrYxPBuXILRD8PANqfNdz83YPCLJzVrhVQ3/nyBxJqjwIVGajF/NH5PijlwEX3ozp8rfhmqvOjnZ+JZgKQL+fz+JEM43czNCKErt3ak1C8R/m4iymWx7Xp9UTC7+jtGeqsNBQxWYIeha1Kr7kd2lKQgUFeG85AUPNcAI9O5PSsXwCqAIxx342HoojgFojX2H+chjP40fuyoxXmmPjgzACfHf/aocKA6REi9kFX8fxDTUvwzeIRHMTGxNarkVS8rW5Np+6Nvv8QKcBEO8IDZmPMIMPA3VuJq2B0JLuNaA0i9XFuxlC5c5KwuOhD/puHt1LxEewy7TJsJLWUcozX5RL2gjz/6cmKoXMgVHje2x5voBcZUF94m1RuAi8t54OKTVRkXkzQ1ZS0jB9zKJGnKudED5z9msgZtEONAFH1pyMBe3hdfQGggcgBA/kSBxU4V1uUtlYz5GVB1N1h1/YAZpu6P0qOkYPSC5sKHd8=
+app: 
     master: travis-ci-lb 
     stage: travis-ci-lb-stage
   on:
     repo: bourguy/travis
 script:
-  # start server in the background
-  - npm start -- --silent &
-  # run all Cypress tests and record on the dashboard
-  - npm run cypress:run -- # --record --key b7ed0b0e-48dc-4f82-a65c-868d70e372a6
-  # after all tests finish running we need
-  # to kill all background jobs (like "npm start &")
-  # this avoids flake in Travis jobs
-  - kill $(jobs -p) || true
+- npm start -- --silent &
+- npm run cypress:run -- --record --key b7ed0b0e-48dc-4f82-a65c-868d70e372a6
+- kill $(jobs -p) || true
