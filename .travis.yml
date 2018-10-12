@@ -17,7 +17,7 @@ deploy:
   on:
     repo: bourguy/travis
 before_script:
-  - $(npm bin)/start --silent &
+  - $(npm bin)/start 
 script:
-  - $(npm bin)/cypress run --record --config baseUrl=http://127.0.0.1
+  - $(npm bin)/cypress run --record 
 
