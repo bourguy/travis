@@ -17,7 +17,7 @@ deploy:
   on:
     repo: bourguy/travis
 before_script:
-  - $npm run start 
+  - $(npm bin)/start 
 script:
   - $(npm bin)/cypress run --record 
 
