@@ -13,7 +13,7 @@ cache:
 deploy:
   provider: heroku
   api_key:
-    secure: GC6NM/83kevM5dsEhyxW+xW18Q724vZIYKN4xgfOSMa1ud4GtIZkZpjxfzxftbIpBmmyQqtgvEeqEtKAQzvN2ZnG4zfUOtQ8ZGgEcVTCGbS7hwE0tgcP6VQNlewSIxo+H8TPoNnoo7XjnzwX6+Sp+CWkXtOtI7I7RwHhBXAfitYijMQHHyJ1rU4jO/6va6+ClbLdvtzrYxPBuXILRD8PANqfNdz83YPCLJzVrhVQ3/nyBxJqjwIVGajF/NH5PijlwEX3ozp8rfhmqvOjnZ+JZgKQL+fz+JEM43czNCKErt3ak1C8R/m4iymWx7Xp9UTC7+jtGeqsNBQxWYIeha1Kr7kd2lKQgUFeG85AUPNcAI9O5PSsXwCqAIxx342HoojgFojX2H+chjP40fuyoxXmmPjgzACfHf/aocKA6REi9kFX8fxDTUvwzeIRHMTGxNarkVS8rW5Np+6Nvv8QKcBEO8IDZmPMIMPA3VuJq2B0JLuNaA0i9XFuxlC5c5KwuOhD/puHt1LxEewy7TJsJLWUcozX5RL2gjz/6cmKoXMgVHje2x5voBcZUF94m1RuAi8t54OKTVRkXkzQ1ZS0jB9zKJGnKudED5z9msgZtEONAFH1pyMBe3hdfQGggcgBA/kSBxU4V1uUtlYz5GVB1N1h1/YAZpu6P0qOkYPSC5sKHd8=
+    secure: d6444642-1d30-4109-a817-c9a13ab5dd9e
 app: 
     master: travis-ci-lb 
     stage: travis-ci-lb-stage
