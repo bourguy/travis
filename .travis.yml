@@ -19,5 +19,5 @@ deploy:
 before_script:
   - $(npm bin)/start --silent &
 script:
-  - $(npm bin)/cypress run --record
+  - $(npm bin)/cypress run --record --config baseUrl=http://127.0.0.1
 
