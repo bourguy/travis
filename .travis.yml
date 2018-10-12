@@ -16,4 +16,6 @@ deploy:
     stage: travis-ci-lb-stage
   on:
     repo: bourguy/travis
+script:
+  - $(npm bin)/cypress run --record
 
