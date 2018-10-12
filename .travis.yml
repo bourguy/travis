@@ -6,7 +6,7 @@ install:
 cache:
   directories:
   - "$home/.npm"
-  - node_modules
+  - "node_modules"
   override:
   - npm ci
   - npm run cy:verify
@@ -14,12 +14,17 @@ deploy:
   provider: heroku
   api_key:
     secure: d6444642-1d30-4109-a817-c9a13ab5dd9e
-app: 
+  app: 
     master: travis-ci-lb 
     stage: travis-ci-lb-stage
   on:
     repo: bourguy/travis
 script:
-- npm start -- --silent &
-- npm run cypress:run -- --record --key b7ed0b0e-48dc-4f82-a65c-868d70e372a6
-- kill $(jobs -p) || true
+  # start server in the background
+  - npm start -- --silent &
+  # run all Cypress tests and record on the dashboard
+  - npm run cypress:run -- #--record
+  # after all tests finish running we need
+  # to kill all background jobs (like "npm start &")
+  # this avoids flake in Travis jobs
+  - kill $(jobs -p) || true
